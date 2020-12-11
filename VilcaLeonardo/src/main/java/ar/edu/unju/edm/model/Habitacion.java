@@ -1,5 +1,4 @@
 package ar.edu.unju.edm.model;
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -31,18 +30,22 @@ public class Habitacion implements Serializable {
 	private String descripcion;
 	@Column
 	private Integer precioNombre;
+	@Column
+	private String UsuarioReserva;
 	
 	public Habitacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre) {
+	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre,
+			String usuarioReserva) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
 		this.tipo = tipo;
 		this.descripcion = descripcion;
 		this.precioNombre = precioNombre;
+		UsuarioReserva = usuarioReserva;
 	}
 	public Long getId() {
 		return id;
@@ -74,8 +77,14 @@ public class Habitacion implements Serializable {
 	public void setPrecioNombre(Integer precioNombre) {
 		this.precioNombre = precioNombre;
 	}
+	public String getUsuarioReserva() {
+		return UsuarioReserva;
+	}
+	public void setUsuarioReserva(String usuarioReserva) {
+		UsuarioReserva = usuarioReserva;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-		
+	
 }

@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 @Component
 @Entity
-public class User implements Serializable{
+public class Usuario implements Serializable{
 	/**
 	 * 
 	 */
@@ -34,11 +34,11 @@ public class User implements Serializable{
 	@Column
 	String tipo;
 	
-	public User() {
+	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(Long id, String nombreUsuario, String contraseña, String nombre, String apellido, int dni,
+	public Usuario(Long id, String nombreUsuario, String contraseña, String nombre, String apellido, int dni,
 			String tipo) {
 		super();
 		this.id = id;
