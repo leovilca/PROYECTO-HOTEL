@@ -14,8 +14,11 @@ public class MainController {
 	@GetMapping("/home")
 	
 	public String IniciarAplicacion() {
-		Habitacion hab = new Habitacion(null,123,"TipoEj","DescripcionEj",500,"Manolito");
+		//INICIO DE SESION
+		Habitacion hab = new Habitacion(null, 12345, "simple", "chida", 250);
 		iHabitacionService.GuardarHabitacion(hab);
+		Habitacion habi = new Habitacion(null, 2345, "doble", "fea", 250);
+		iHabitacionService.GuardarHabitacion(habi);
 		return "index";
 	}
 }

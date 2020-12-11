@@ -6,26 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.model.Habitacion;
+import ar.edu.unju.edm.model.Reserva;
 import ar.edu.unju.edm.repository.IHabitacionDAO;
 
 @Service
 public class IHabitacionServiceImp implements IHabitacionService {
 	@Autowired
 	IHabitacionDAO iHabitacionDAO;
+	Habitacion unaHabitacion;
 	@Override
 	public void GuardarHabitacion(Habitacion unaHabitacion) {
 		iHabitacionDAO.save(unaHabitacion);
-		
-	}
-	@Override
-	public void ReservarHabitacion(Long reserva, String Usuario) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void ReservarHabitaciones(List<Long> habitaciones, String Usuario) {
 		// TODO Auto-generated method stub
-		
+	}
+	@Override
+	public void ReservarHabitacion(Reserva reserva) {
+		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setUser(reserva.getUsuarioReserva());
+		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setDesayuno(reserva.getDesayuno()); //
+	}
+	@Override
+	public Iterable<Habitacion> MostrarHabitaciones() {
+		return iHabitacionDAO.findAll();
 	}
 
 }
