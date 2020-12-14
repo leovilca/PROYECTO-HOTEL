@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Reserva</title>
+</head>
+<body class="text-center">
+    <div class="container" >
+    	<h3>Habitaciones Disponibles</h3>
+    	<table class="table table-bordered"> <!--  --> 
+			<tr>
+				<th>ID</th>
+				<th>Codigo</th>
+				<th>Tipo</th>
+				<th>Descripcion</th>
+			</tr>
+			<tr th:each="reserva : ${reservas1}">
+				<td th:text="${reserva.id}"></td>
+				<td th:text="${reserva.codigo}"></td>
+				<td th:text="${reserva.tipo}"></td>
+				<td th:text="${reserva.descripcion}"></td>
+			</tr>
+		</table>
+    	<form id="formReserva">
+			<div class="form-group" >
+			  	<label for="codigoReserva">Escriba el ID de habitacion elegida</label>
+			  	<input type="number" class="form-control" id="codigoReserva" placeholder="Escriba el codigo aqui" th:field="${#}"></input>
+			</div>
+			<div class="form-group">
+			  	<label for="usuarioReserva">Escriba su nombre de Usuario</label>
+			  	<input type="text" class="form-control" id="usuarioReserva" placeholder="Escriba el usuario aqui" th:field="${#}"></input>
+			</div>
+			<button type="submit" class="btn btn-primary" value="Reservar">Reservar</button>
+		</form>
+    </div>
+</body>
+</html>		

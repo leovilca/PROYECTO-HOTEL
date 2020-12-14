@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.model.Habitacion;
-import ar.edu.unju.edm.repository.IHabitacionDAO;
+import ar.edu.unju.edm.model.Usuario;
+import ar.edu.unju.edm.repository.IUsuarioDAO;
 
 @Service
 public class IUsuarioServiceImp implements IUsuarioService {
 	
 	@Autowired
-	IHabitacionDAO iHabitacionDAO;
+	IUsuarioDAO iUsuarioDAO;
 	
 	@Override
 	public Habitacion buscarFecha(LocalDate buscada) {
@@ -27,7 +28,7 @@ public class IUsuarioServiceImp implements IUsuarioService {
 	}
 
 	@Override
-	public	Iterable<Habitacion> MostrarReservas() {
-		return iHabitacionDAO.findAll();
+	public Usuario BuscarPorId(Long id) {
+		return iUsuarioDAO.findById(id).get();
 	}
 }

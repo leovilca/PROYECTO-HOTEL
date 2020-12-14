@@ -13,4 +13,5 @@ public interface IHabitacionService {
 	public void ReservarHabitacion(Reserva reserva);
 	public void ReservarHabitaciones(List<Long> habitaciones,String Usuario);
 	public Iterable<Habitacion> MostrarHabitaciones();
+	public void update();
 }

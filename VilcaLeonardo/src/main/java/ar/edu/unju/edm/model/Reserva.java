@@ -4,12 +4,12 @@ public class Reserva{
 	
 	private Long codigoReserva;
 	private String usuarioReserva;
-	private Boolean desayuno;
+	private String desayuno;
 	public Reserva() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Reserva(Long codigoReserva, String usuarioReserva, Boolean desayuno) {
+	public Reserva(Long codigoReserva, String usuarioReserva, String desayuno) {
 		super();
 		this.codigoReserva = codigoReserva;
 		this.usuarioReserva = usuarioReserva;
@@ -27,10 +27,10 @@ public class Reserva{
 	public void setUsuarioReserva(String usuarioReserva) {
 		this.usuarioReserva = usuarioReserva;
 	}
-	public Boolean getDesayuno() {
+	public String getDesayuno() {
 		return desayuno;
 	}
-	public void setDesayuno(Boolean desayuno) {
+	public void setDesayuno(String desayuno) {
 		this.desayuno = desayuno;
 	}
 	

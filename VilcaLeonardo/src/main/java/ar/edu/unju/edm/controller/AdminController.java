@@ -13,9 +13,14 @@ public class AdminController {
 	@Autowired
 	IUsuarioService iUsuarioService;
 	
+	@GetMapping("/Client")
+	public String InterfazAdmin() {
+		return "InterfazAdmin";
+	}
+	
 	@GetMapping("/Admin")
 	public String Admin() {
-		return "Admin";
+		return "InterfazAdmin";
 	}
 	@GetMapping("/BuscarFecha")
 	public String BuscarFecha() {
@@ -24,11 +29,5 @@ public class AdminController {
 	@GetMapping("/BuscarUsuario")
 	public String BuscarUsuario() {
 		return "BuscarUsuario";
-	}
-	
-	@GetMapping("/MostrarReservas")
-	public String MostrarReservas(Model model) {
-		model.addAttribute("reservas",iUsuarioService.MostrarReservas());
-		return "MostrarReservas";
 	}
 }

@@ -26,10 +26,18 @@ public class IHabitacionServiceImp implements IHabitacionService {
 	public void ReservarHabitacion(Reserva reserva) {
 		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setUser(reserva.getUsuarioReserva());
 		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setDesayuno(reserva.getDesayuno()); //
+		System.out.println("Reserva a guardar: "  +reserva.getUsuarioReserva()+"   "+reserva.getCodigoReserva());
 	}
 	@Override
 	public Iterable<Habitacion> MostrarHabitaciones() {
 		return iHabitacionDAO.findAll();
+	}
+	@Override
+	public void update() {
+		Habitacion xd = new Habitacion();
+		iHabitacionDAO.save(xd);
+		iHabitacionDAO.delete(xd);
+		
 	}
 
 }

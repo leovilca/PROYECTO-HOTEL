@@ -33,7 +33,7 @@ public class Habitacion implements Serializable {
 	@Column
 	private String user;
 	@Column
-	private Boolean desayuno;
+	private String desayuno;
 	
 	public Habitacion() {
 		super();
@@ -41,7 +41,7 @@ public class Habitacion implements Serializable {
 	}
 
 	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre, String user,
-			Boolean desayuno) {
+			String desayuno) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -110,11 +110,11 @@ public class Habitacion implements Serializable {
 		this.user = user;
 	}
 
-	public Boolean getDesayuno() {
+	public String getDesayuno() {
 		return desayuno;
 	}
 
-	public void setDesayuno(Boolean desayuno) {
+	public void setDesayuno(String desayuno) {
 		this.desayuno = desayuno;
 	}
 

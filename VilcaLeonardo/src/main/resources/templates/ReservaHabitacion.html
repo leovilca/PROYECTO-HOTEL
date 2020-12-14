@@ -9,7 +9,7 @@
 <body class="text-center">
     <div class="container" >
     	<h3>Habitaciones Disponibles</h3>
-    	<table class="table table-bordered" > <!--  --> 
+    	<table class="table table-bordered"> <!--  --> 
 			<tr>
 				<th>ID</th>
 				<th>Codigo</th>
@@ -24,15 +24,19 @@
 			</tr>
 		</table>
     	<form id="formReserva" th:object="${reservaDelForm}" th:action="${reservarHabitacion}" method="post">
-			<div class="form-group" th:="habitacion : ${habitaciones}">
+			<div class="form-group" >
 			  	<label for="codigoReserva">Escriba el ID de habitacion elegida</label>
-			  	<input type="number" class="form-control" id="codigoReserva" placeholder="Escriba el codigo aqui" th:field="${reservaDelForm.codigoReserva}"></input>
+			  	<input type="text" class="form-control" id="codigoReserva" placeholder="Escriba el codigo aqui" th:field="*{codigoReserva}"></input>
 			</div>
-			<div class="form-group" th:="habitacion : ${habitaciones}">
+			<div class="form-group">
 			  	<label for="usuarioReserva">Escriba su nombre de Usuario</label>
-			  	<input type="text" class="form-control" id="usuarioReserva" placeholder="Escriba el usuario aqui" th:field="${reservaDelForm.usuarioReserva}"></input>
+			  	<input type="text" class="form-control" id="usuarioReserva" placeholder="Escriba el usuario aqui" th:field="*{usuarioReserva}"></input>
 			</div>
-			<button type="submit" class="btn btn-primary">Reservar</button>
+			<div class="form-group">
+			  	<label for="usuarioReserva">Desea la reserva con desayuno? Si/No</label>
+			  	<input type="text" class="form-control" id="desayuno" placeholder="Escriba su respuesta (Si/No)" th:field="*{desayuno}"></input>
+			</div>
+			<button type="submit" class="btn btn-primary" value="Reservar">Reservar</button>
 		</form>
     </div>
 </body>
