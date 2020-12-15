@@ -4,8 +4,6 @@ package ar.edu.unju.edm.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import ar.edu.unju.edm.model.Habitacion;
 import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.repository.IUsuarioDAO;
 
@@ -29,10 +27,9 @@ public class IUsuarioServiceImp implements IUsuarioService {
 		iUsuarioDAO.delete(xd);
 	}
 
-/*
+
 	@Override
-	public Optional<Usuario> BuscarPorUsuario(String username) {
-		return iUsuarioDAO.findByNombreUsuario(username);
+	public void GuardarUsuario(Usuario usuario) {
+		iUsuarioDAO.save(usuario);		
 	}
-*/
 }

@@ -10,5 +10,5 @@ import ar.edu.unju.edm.model.Usuario;
 public interface IUsuarioService {
 	public Usuario BuscarPorId(Long id);
 	public void update();
-	//public Optional<Usuario> BuscarPorUsuario(String username);
+	public void GuardarUsuario(Usuario usuario);
 }

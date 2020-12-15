@@ -41,6 +41,15 @@ public class Habitacion implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Habitacion(Long id, Integer codigo, String tipo, String descripcion) {
+		super();
+		this.id = id;
+		this.codigo = codigo;
+		this.tipo = tipo;
+		this.descripcion = descripcion;
+	}
+
 	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre, String user,
 			String desayuno, LocalDate fecha) {
 		super();

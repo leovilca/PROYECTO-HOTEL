@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
 				.permitAll()
-				.logoutSuccessUrl("/login?logout");
+				.logoutSuccessUrl("/login");
 	}
 	
 	BCryptPasswordEncoder bCryptPasswordEncoder;
