@@ -27,8 +27,7 @@ public class HabitacionColtroller {
 	public String AgregarReserva(@ModelAttribute("reservaDelForm") Reserva reserva, Model model) {
 		iHabitacionService.ReservarHabitacion(reserva);
 		iHabitacionService.update();
-		return ReservaHabitacion(model);
-		//return InterfazClient();
+		return "InterfazClient";
 	}
 	@GetMapping("/Reservas")
 	public String ReservaHabitaciones() {

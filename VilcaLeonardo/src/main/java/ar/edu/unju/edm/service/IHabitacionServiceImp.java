@@ -1,7 +1,6 @@
 package ar.edu.unju.edm.service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +26,9 @@ public class IHabitacionServiceImp implements IHabitacionService {
 	@Override
 	public void ReservarHabitacion(Reserva reserva) {
 		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setUser(reserva.getUsuarioReserva());
-		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setDesayuno(reserva.getDesayuno()); //
-		System.out.println("Reserva a guardar: "  +reserva.getUsuarioReserva()+"   "+reserva.getCodigoReserva());
+		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setDesayuno(reserva.getDesayuno());
+		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setFecha(LocalDate.of(reserva.getA(),reserva.getM(),reserva.getD()));
+		iHabitacionDAO.findById(reserva.getCodigoReserva()).get().setPrecioNombre(reserva.getMonto());
 	}
 	@Override
 	public Iterable<Habitacion> MostrarHabitaciones() {

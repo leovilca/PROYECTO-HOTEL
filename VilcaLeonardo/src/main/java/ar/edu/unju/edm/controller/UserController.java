@@ -1,7 +1,6 @@
 package ar.edu.unju.edm.controller;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +14,7 @@ import ar.edu.unju.edm.service.IHabitacionService;
 import ar.edu.unju.edm.service.IUsuarioService;
 
 @Controller
-public class AdminController {
+public class UserController {
 	
 	@Autowired
 	IUsuarioService iUsuarioService;
@@ -31,8 +30,7 @@ public class AdminController {
 	public String Admin(Model model) {
 		return "InterfazAdmin";
 	}
-	
-	
+
 	@GetMapping("/BuscarFecha")
 	public String BuscarFecha(Model model) {
 		Cadena unaCad = new Cadena();
@@ -52,7 +50,6 @@ public class AdminController {
 		return "FechaBuscada";
 	}
 	
-
 	@GetMapping("/BuscarUsuario")
 	public String BuscarUsuario(Model model) {
 		Cadena unaCad = new Cadena();

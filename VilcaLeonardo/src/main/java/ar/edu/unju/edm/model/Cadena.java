@@ -1,7 +1,5 @@
 package ar.edu.unju.edm.model;
 
-import java.time.LocalDate;
-
 import org.springframework.stereotype.Component;
 
 @Component

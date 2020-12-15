@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Admin</title>
+</head>
+<body class="text-center">
+	<div class="form-group">
+		<form action="Reserva" class="form-group">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Reservar una habitacion">
+		</form>
+		<form action="Reservas" class="form-group" id="formBuscarUsuario">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Reservar mas de una habitacion">
+		</form>
+		<form action="home" class="form-group" id="formCerrarSesion">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesion">
+		</form>
+	</div>
+</body>
+</html>
