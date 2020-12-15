@@ -1,5 +1,6 @@
 package ar.edu.unju.edm.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -14,4 +15,6 @@ public interface IHabitacionService {
 	public void ReservarHabitaciones(List<Long> habitaciones,String Usuario);
 	public Iterable<Habitacion> MostrarHabitaciones();
 	public void update();
+	public Iterable<Habitacion> BuscarPorUsuario(String user);
+	public Iterable<Habitacion> BuscarPorFecha(String fecha);
 }

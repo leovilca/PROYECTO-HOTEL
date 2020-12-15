@@ -1,5 +1,6 @@
 package ar.edu.unju.edm.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,14 @@ public class IHabitacionServiceImp implements IHabitacionService {
 		iHabitacionDAO.save(xd);
 		iHabitacionDAO.delete(xd);
 		
+	}
+	@Override
+	public Iterable<Habitacion> BuscarPorUsuario(String user) {
+		return iHabitacionDAO.findByUser(user);
+	}
+	@Override
+	public Iterable<Habitacion> BuscarPorFecha(String fecha) {
+		return iHabitacionDAO.findByFecha(fecha);
 	}
 
 }

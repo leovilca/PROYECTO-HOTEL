@@ -28,10 +28,12 @@ public class HabitacionColtroller {
 		iHabitacionService.ReservarHabitacion(reserva);
 		iHabitacionService.update();
 		return ReservaHabitacion(model);
+		//return InterfazClient();
 	}
 	@GetMapping("/Reservas")
 	public String ReservaHabitaciones() {
 		return "ReservaHabitaciones";
+		//return InterfazClient();
 	}
 	@GetMapping("/MostrarReservas")
 	public String MostrarReservas(Model model) {

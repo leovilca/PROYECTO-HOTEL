@@ -1,5 +1,7 @@
 package ar.edu.unju.edm.model;
 import java.io.Serializable;
+import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,14 +36,14 @@ public class Habitacion implements Serializable {
 	private String user;
 	@Column
 	private String desayuno;
-	
+	@Column
+	private String fecha;
 	public Habitacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre, String user,
-			String desayuno) {
+			String desayuno, String fecha) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -50,74 +52,56 @@ public class Habitacion implements Serializable {
 		this.precioNombre = precioNombre;
 		this.user = user;
 		this.desayuno = desayuno;
+		this.fecha = fecha;
 	}
-
-	
-	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre) {
-		super();
-		this.id = id;
-		this.codigo = codigo;
-		this.tipo = tipo;
-		this.descripcion = descripcion;
-		this.precioNombre = precioNombre;
-	}
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public Integer getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
 	public String getTipo() {
 		return tipo;
 	}
-
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 	public Integer getPrecioNombre() {
 		return precioNombre;
 	}
-
 	public void setPrecioNombre(Integer precioNombre) {
 		this.precioNombre = precioNombre;
 	}
-
 	public String getUser() {
 		return user;
 	}
-
 	public void setUser(String user) {
 		this.user = user;
 	}
-
 	public String getDesayuno() {
 		return desayuno;
 	}
-
 	public void setDesayuno(String desayuno) {
 		this.desayuno = desayuno;
 	}
-
+	public String getFecha() {
+		return fecha;
+	}
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

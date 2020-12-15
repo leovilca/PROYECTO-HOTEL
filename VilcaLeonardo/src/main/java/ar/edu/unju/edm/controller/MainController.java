@@ -13,7 +13,7 @@ public class MainController {
 	
 	@GetMapping("/home")
 	
-	public String IniciarAplicacion(Model model) {
+	public String IniciarAplicacion() {
 		//INICIO DE SESION
 		return "index";
 	}
