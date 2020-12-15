@@ -13,7 +13,7 @@
 		</form>
 		<form th:object="${user}" th:action="${buscarUsuario}" method="post"class="form-group" id="formBuscarUsuario"  >
 			<label for="buscarUsuario">Escriba el Usuario a Buscar</label>
-			<input id="buscarUsuario" type="text" th:field="${user}"  class="form-control">
+			<input id="buscarUsuario" type="text" th:field="${user.cad}"  class="form-control">
 			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar">
 		</form>
 	</div>

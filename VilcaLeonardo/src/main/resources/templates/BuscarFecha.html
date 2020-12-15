@@ -8,13 +8,17 @@
 </head>
 <body class="text-center">
 	<div class="form-group">
-		<form action="Admin" class="form-group">
+		<form action="Admin" class="container">
 				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Volver">
 		</form>
 		<form th:object="${fecha}" th:action="${buscarFecha}" method="post" class="form-group" id="formBuscarUsuario"  >
-			<label for="buscarUsuario">Ingrese la Fecha a Buscar</label>
-			<input id="buscarUsuario" type="date" th:field="${fecha}"  class="form-control">
-			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar">
+			<label for="diaFecha">Dia</label>
+			<input id="diaFecha" type="number" th:field="${fecha.d}"  class="form-control">
+			<label for="mesFecha">Mes</label>
+			<input id="mesFecha" type="number" th:field="${fecha.m}"  class="form-control">
+			<label for="añoFecha">Año</label>
+			<input id="añoFecha" type="number" th:field="${fecha.a}"  class="form-control">
+			<label></label><input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar">
 		</form>
 	</div>
 </body>

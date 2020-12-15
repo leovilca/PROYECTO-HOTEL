@@ -1,5 +1,6 @@
 package ar.edu.unju.edm.service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class IHabitacionServiceImp implements IHabitacionService {
 		return iHabitacionDAO.findByUser(user);
 	}
 	@Override
-	public Iterable<Habitacion> BuscarPorFecha(String fecha) {
+	public Iterable<Habitacion> BuscarPorFecha(LocalDate fecha) {
 		return iHabitacionDAO.findByFecha(fecha);
 	}
 

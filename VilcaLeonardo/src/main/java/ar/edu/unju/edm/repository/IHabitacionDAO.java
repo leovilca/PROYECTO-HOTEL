@@ -1,6 +1,5 @@
 package ar.edu.unju.edm.repository;
 
-import java.util.Date;
 import java.time.LocalDate;
 
 import org.springframework.data.repository.CrudRepository;
@@ -10,5 +9,5 @@ import ar.edu.unju.edm.model.Habitacion;
 @Repository
 public interface IHabitacionDAO extends CrudRepository<Habitacion,Long> {
 	public Iterable<Habitacion> findByUser(String user);
-	public Iterable<Habitacion> findByFecha(String fecha);
+	public Iterable<Habitacion> findByFecha(LocalDate fecha);
 }

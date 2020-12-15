@@ -16,6 +16,8 @@
 				<tr>
 					<th>Codigo</th>
 					<th>Tipo</th>
+					<th>Fecha</th>
+					<th>Desayuno</th>
 					<th>Descripcion</th>
 					<th>Monto Pagado</th>
 					<th>Usuario</th>
@@ -23,6 +25,8 @@
 				<tr th:each="reserva : ${reservas}">
 					<td th:text="${reserva.codigo}"></td>
 					<td th:text="${reserva.tipo}"></td>
+					<td th:text="${reserva.fecha}"></td>
+					<td th:text="${reserva.desayuno}"></td>
 					<td th:text="${reserva.descripcion}"></td>
 					<td th:text="${reserva.precioNombre}"></td>
 					<td th:text="${reserva.User}"></td>
@@ -31,4 +35,4 @@
 	    </div>
     </div>
 </body>
-</ht
+</html>

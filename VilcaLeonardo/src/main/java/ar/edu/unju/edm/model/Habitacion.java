@@ -1,6 +1,5 @@
 package ar.edu.unju.edm.model;
 import java.io.Serializable;
-import java.util.Date;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -37,13 +36,13 @@ public class Habitacion implements Serializable {
 	@Column
 	private String desayuno;
 	@Column
-	private String fecha;
+	private LocalDate fecha;
 	public Habitacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Habitacion(Long id, Integer codigo, String tipo, String descripcion, Integer precioNombre, String user,
-			String desayuno, String fecha) {
+			String desayuno, LocalDate fecha) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -96,10 +95,10 @@ public class Habitacion implements Serializable {
 	public void setDesayuno(String desayuno) {
 		this.desayuno = desayuno;
 	}
-	public String getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 	public static long getSerialversionuid() {

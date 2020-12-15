@@ -1,6 +1,6 @@
 package ar.edu.unju.edm.service;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -16,5 +16,5 @@ public interface IHabitacionService {
 	public Iterable<Habitacion> MostrarHabitaciones();
 	public void update();
 	public Iterable<Habitacion> BuscarPorUsuario(String user);
-	public Iterable<Habitacion> BuscarPorFecha(String fecha);
+	public Iterable<Habitacion> BuscarPorFecha(LocalDate fecha);
 }
