@@ -22,7 +22,7 @@ public class Usuario implements Serializable{
 	@GenericGenerator(name="native",strategy="native")
 	private Long id;
 	@Column
-	String NombreUsuario;
+	String nombreUsuario;
 	@Column
 	String contraseña;
 	@Column
@@ -42,7 +42,7 @@ public class Usuario implements Serializable{
 			String tipo) {
 		super();
 		this.id = id;
-		NombreUsuario = nombreUsuario;
+		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		Apellido = apellido;
@@ -56,10 +56,10 @@ public class Usuario implements Serializable{
 		this.id = id;
 	}
 	public String getNombreUsuario() {
-		return NombreUsuario;
+		return nombreUsuario;
 	}
 	public void setNombreUsuario(String nombreUsuario) {
-		NombreUsuario = nombreUsuario;
+		this.nombreUsuario = nombreUsuario;
 	}
 	public String getContraseña() {
 		return contraseña;
@@ -94,4 +94,5 @@ public class Usuario implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 }
