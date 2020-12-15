@@ -1,6 +1,5 @@
 package ar.edu.unju.edm.controller;
-//*
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+/*
 import ar.edu.unju.edm.model.Habitacion;
 import ar.edu.unju.edm.model.Usuario;
 //*/
@@ -21,11 +20,9 @@ public class MainController {
 	IHabitacionService iHabitacionService;
 	
 	@GetMapping({"/","/login","/home","/login?error=true"})
-	public String IniciarAplicacion(Model model) {		
+	public String IniciarAplicacion(Model model) {
 		/*
 		// AGREGADO DE USUARIOS Y HABITACIONES DE EJEMPLO
-		
-		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
 		
 		 iHabitacionService.GuardarHabitacion(new Habitacion((long)1,12345,"Doble","Bonita"));
 		 iHabitacionService.GuardarHabitacion(new Habitacion((long)2,46372,"Simple","Pequeña"));
@@ -33,11 +30,9 @@ public class MainController {
 		 iHabitacionService.GuardarHabitacion(new Habitacion((long)4,19726,"Simple","Comoda"));
 		 iHabitacionService.GuardarHabitacion(new Habitacion((long)5,11123,"Doble","Segura"));
 		 Usuario bas = new Usuario((long)1,"userAdmin","userAdmin","Leonardo","Vilca",44125126,"Admin");
-		 bas.setContraseña(bCryptPasswordEncoder.encode("userAdmin"));
-		 iUsuarioService.GuardarUsuario(bas);
+		 iUsuarioService.EncriptarYGuardarUsuario(bas);
 		 bas = new Usuario((long)2,"userClient","userClient","Fabricio","Gutierrez",43978342,"Client");
-		 bas.setContraseña(bCryptPasswordEncoder.encode("userClient"));
-		 iUsuarioService.GuardarUsuario(bas);
+		 iUsuarioService.EncriptarYGuardarUsuario(bas);
 		 //*/
 		return "index";
 	}

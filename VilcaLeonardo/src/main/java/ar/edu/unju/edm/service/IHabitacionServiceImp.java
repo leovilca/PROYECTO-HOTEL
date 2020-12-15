@@ -1,7 +1,6 @@
 package ar.edu.unju.edm.service;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,10 +17,6 @@ public class IHabitacionServiceImp implements IHabitacionService {
 	@Override
 	public void GuardarHabitacion(Habitacion unaHabitacion) {
 		iHabitacionDAO.save(unaHabitacion);
-	}
-	@Override
-	public void ReservarHabitaciones(List<Long> habitaciones, String Usuario) {
-		// TODO Auto-generated method stub
 	}
 	@Override
 	public void ReservarHabitacion(Reserva reserva) {

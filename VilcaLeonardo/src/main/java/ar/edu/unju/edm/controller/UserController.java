@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ar.edu.unju.edm.model.Cadena;
+import ar.edu.unju.edm.model.Habitacion;
+import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.service.IHabitacionService;
 import ar.edu.unju.edm.service.IUsuarioService;
 
@@ -64,5 +66,27 @@ public class UserController {
 	public String MostrarUsuario(Cadena usuario, Model model) {
 		model.addAttribute("reservas",iHabitacionService.BuscarPorUsuario(usuario.getCad()));
 		return "UsuarioBuscado";
+	}
+	
+	@GetMapping("/AgregarUsuario")
+	public String AgregarUsuario(Model model) {
+		model.addAttribute("usuarioDelForm",new Usuario());
+		return "AgregarUsuario";
+	}
+	@PostMapping("/AgregarUsuario")
+	public String AgregarUsuarioPost(@ModelAttribute("usuarioDelForm") Usuario usuario, Model model) {
+		iUsuarioService.EncriptarYGuardarUsuario(usuario);
+		return "InterfazAdmin";
+	}
+	
+	@GetMapping("/AgregarHabitacion")
+	public String AgregarHabitacion(Model model) {
+		model.addAttribute("habitacionDelForm",new Habitacion());
+		return "AgregarHabitacion";
+	}
+	@PostMapping("/AgregarHabitacion")
+	public String AgregarHabitacionPost(@ModelAttribute("habitacionDelForm") Habitacion habitacion, Model model) {
+		iHabitacionService.GuardarHabitacion(habitacion);
+		return "InterfazAdmin";
 	}
 }
